@@ -5,11 +5,11 @@ import CalEn.*;
  * Mac
  * Compile command
  * ===============
- * javac -classpath .:/Applications/MATLAB/MATLAB_Runtime/v901/toolbox/javabuilder/jar/javabuilder.jar:CalEn.jar TestCalEn.java
+ * javac -cp .:/Applications/MATLAB/MATLAB_Runtime/v901/toolbox/javabuilder/jar/javabuilder.jar:CalEn.jar TestCalEn.java
  *
  * Run command
  * ===========
- * java -classpath .:/Applications/MATLAB/MATLAB_Runtime/v901/toolbox/javabuilder/jar/javabuilder.jar:CalEn.jar TestCalEn test_orchid_photo.jpg
+ * java -cp .:/Applications/MATLAB/MATLAB_Runtime/v901/toolbox/javabuilder/jar/javabuilder.jar:CalEn.jar TestCalEn test_orchid_photo.jpg
  */
 class TestCalEn {
     public static void main(String[] args) {
