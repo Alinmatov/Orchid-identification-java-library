@@ -14,11 +14,13 @@ if (!move_uploaded_file($_FILES['photo']['tmp_name'], $uploadfile)) {
 
 // TODO: Execute command
 $commandInput = 'java -cp "C:\Program Files\MATLAB\MATLAB Runtime\v901\toolbox\javabuilder\jar\javabuilder.jar;..\orchid-lib\CalEn.jar;..\orchid-lib\." TestCalEn '.$uploaddir.'\\'.$filename;
-$commandOutput = exec($commandInput);
+// exec($commandInput, $commandOutput, $returnVar);
+$commandOutput = system($commandInput);
 
 // Upload photo success
 http_response_code(200);
 echo json_encode(['message' => 'File is valid, and was successfully uploaded.',
     'input' => $commandInput,
-    'output' => $commandOutput
+    'output' => $commandOutput,
+    // 'var' => $returnVar
 ]);
