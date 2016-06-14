@@ -13,7 +13,7 @@ if (!move_uploaded_file($_FILES['photo']['tmp_name'], $uploadfile)) {
 }
 
 // TODO: Execute command
-$commandInput = 'java -cp ".;C:\Program Files\MATLAB\MATLAB Runtime\v901\toolbox\javabuilder\jar\javabuilder.jar;..\orchid-lib\CalEn.jar" ..\orchid-lib\TestCalEn '.$uploaddir.'\\'.$filename;
+$commandInput = 'java -cp "C:\Program Files\MATLAB\MATLAB Runtime\v901\toolbox\javabuilder\jar\javabuilder.jar;..\orchid-lib\CalEn.jar;..\orchid-lib\." TestCalEn '.$uploaddir.'\\'.$filename;
 $commandOutput = exec($commandInput);
 
 // Upload photo success
