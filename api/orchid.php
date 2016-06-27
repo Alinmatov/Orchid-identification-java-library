@@ -29,4 +29,4 @@ echo json_encode(['message' => 'File is valid, and was successfully uploaded.',
     'input' => $commandInput,
     'output' => $commandOutput,
     'orchid' => $orchid,
-]);
+], JSON_UNESCAPED_SLASHES);
