@@ -5,3 +5,6 @@
 
 ### Run
 `java -cp ".;C:\Program Files\MATLAB\MATLAB Runtime\v901\toolbox\javabuilder\jar\javabuilder.jar;CalEn.jar" TestCalEn test_orchid_photo.jpg`
+
+### Test with curl
+`curl --form "photo=@.\api\orchid-photos\cattleya.jpg" http://localhost/orchid-api/api/orchid.php`
