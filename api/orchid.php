@@ -37,14 +37,15 @@ $commandInput = "lib\orchid.bat $uploadfile";
 exec($commandInput, $commandOutput, $returnVar);
 
 // Example orchid response
-$orchid['image_url'] = 'http://'.$_SERVER['HTTP_HOST'].'/orchid-api/api/orchid-photos/cattleya.jpg';
+$orchidResult['photo_image'] = 'http://'.$_SERVER['HTTP_HOST'].'/orchid-api'.$uploadfile;
+$orchidResult['orchid_image'] = 'http://'.$_SERVER['HTTP_HOST'].'/orchid-api/api/orchid-photos/cattleya.jpg';
 
 // Upload photo success
 http_response_code(200);
 echo json_encode([
 	'code' => 200,
 	'message' => 'File is valid, and was successfully uploaded.',
-	'photo' => $uploadfile,
+	'photo' => $photo,
     'input' => $commandInput,
     'output' => $commandOutput,
     'orchid' => $orchidResult,
