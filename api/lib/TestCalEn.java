@@ -13,6 +13,7 @@ import CalEn.*;
  */
 class TestCalEn {
     public static void main(String[] args) {
+		
         MWCharArray n = null;
         Object[] result = null;
         ImageEnergy theMagic = null;
@@ -23,8 +24,6 @@ class TestCalEn {
         }
 
         try {
-//            n = new MWCharArray(args[0]);
-
             theMagic = new ImageEnergy();
 
             result = theMagic.CalEn(1, args[0]);
@@ -34,7 +33,6 @@ class TestCalEn {
         }
 
         try {
-//            MWArray.disposeArray(n);
             MWArray.disposeArray(result);
             theMagic.dispose();
         } catch (NullPointerException e) {
