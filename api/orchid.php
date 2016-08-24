@@ -16,7 +16,7 @@ if ($conn->connect_error) {
 
 $sql = "SELECT * FROM `paph14` WHERE paph_id = 1";
 $result = $conn->query($sql);
-$orchidResult = mysql_fetch_assoc($result);
+$orchidResult = $result->fetch_assoc();
 
 // Disconnect database
 $conn->close();
