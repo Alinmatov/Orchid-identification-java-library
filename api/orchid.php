@@ -30,11 +30,9 @@ if (!move_uploaded_file($_FILES['photo']['tmp_name'], $uploadfile)) {
     exit();
 }
 
-// TODO: Execute command `2>&1 help to print output.`
-//$commandInput = 'java -cp "lib;C:\Program Files\MATLAB\MATLAB Runtime\v901\toolbox\javabuilder\jar\javabuilder.jar;lib\CalEn.jar" TestCalEn '.$uploaddir.'\\'.$filename.' 2>&1';
+// Execute command
 $commandInput = "lib\orchid.bat $uploadfile";
 exec($commandInput, $commandOutput, $returnVar);
-//$commandOutput = system($commandInput);
 
 // Example orchid response
 $orchid['name'] = 'กล้วยไม้สกุลแคทลียา Cattleya';
