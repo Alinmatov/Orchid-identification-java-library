@@ -4,14 +4,20 @@ header('content-type: application/json');
 $servername = "localhost";
 $username = "orchid";
 $password = "orchid1234";
+$dbname = "orchid";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+
+$sql = "SELECT * FROM `paph14` WHERE paph_id = 1";
+$result = $conn->query($sql);
+
+$conn->close();
 
 $uploaddir = 'photos';
 $filename = basename($_FILES['photo']['name']);
@@ -45,4 +51,5 @@ echo json_encode([
     'output' => $commandOutput,
     //'orchid' => $orchid,
 	//'user' => get_current_user(),
+    'orchid' => $result,
 ], JSON_UNESCAPED_SLASHES);
